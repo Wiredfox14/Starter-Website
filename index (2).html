@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        main {
+            padding: 20px;
+        }
+        #typedtext {
+            border-right: 2px solid #00ff00;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="typedtext"></h1>
+        </header>
+        <main>
+            <p>Hello world</p>
+        </main>
+    </div>
+    <script>
+        var text = 'Welcome';
+        var i = 0;
+        var speed = 100;
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typedtext").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        typeWriter();
+    </script>
+</body>
+</html>
